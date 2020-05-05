@@ -161,13 +161,12 @@ class Build_network(object):
             wr8_3 = weight_variable(shape = [3, 3, feature_base * 32, feature_base * 32], trainable = kernel_collect_trainable, name = "Variable_2")
             wr8_4 = weight_variable(shape = [3, 3, feature_base * 32, feature_base * 32], trainable = kernel_collect_trainable, name = "Variable_3")
             block8_2 = DR_block_leaky(block8_1, wr8_3, wr8_4, keep_prob,  is_train = mode, rate = 2, bn_trainable = bn_collect_trainable, scope = bn_scope + 'bn_8_2')
-
+'''
         with tf.variable_scope('output') as scope:
             w9_1 = weight_variable(shape = [3, 3, feature_base * 32, feature_base * 32], trainable = kernel_collect_trainable, name = "Variable")
             conv9_1 = bn_leaky_relu_conv2d_layer(block8_2, w9_1, keep_prob, is_train = mode, bn_trainable = bn_collect_trainable, scope = bn_scope + 'bn_9_1')
             w9_2 = weight_variable(shape = [3, 3, feature_base * 32, feature_base * 32], trainable = kernel_collect_trainable, name = "Variable_1")
             conv9_2 = bn_leaky_relu_conv2d_layer(conv9_1, w9_2, keep_prob, is_train = mode, bn_trainable = bn_collect_trainable, scope = bn_scope + 'bn_9_2')
-
 '''
         with tf.variable_scope('group_9') as scope:
             w9_1 = weight_variable(shape = [3, 3, feature_base * 32, feature_base * 32], trainable = kernel_collect_trainable, name = "Variable")
@@ -185,7 +184,6 @@ class Build_network(object):
         with tf.variable_scope('output') as scope:
             w11_1 = weight_variable( shape = [5, 5, self.n_class * 8, self.n_class], trainable = kernel_collect_trainable, name = "Variable")
             logits = conv2d_sym_only(flat_conv10_1, w11_1)
-'''
 
         return logits
 
