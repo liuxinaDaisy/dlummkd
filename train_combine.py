@@ -244,7 +244,7 @@ class Trainer(object):
                 _save_nii(pred_y, gt_y, pair[1], self.output_path)
 
             print dice
-
+            
             dice_avg = np.mean(dice, axis=0).tolist()
             dice_std = np.std(dice, axis=0).tolist()
 
