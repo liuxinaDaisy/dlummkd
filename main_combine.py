@@ -5,7 +5,7 @@ import os
 import glob
 import logging
 import datetime
-from lib.util import _read_lists
+from lib.utils import _read_lists
 
 from network import Build_network as build_network
 from train_combine import Trainer
@@ -14,7 +14,7 @@ logging.basicConfig(filename="general_log", level=logging.DEBUG)
 
 currtime = datetime.datetime.now().strftime('%Y_%m_%d_%H_%M_%S')
 
-## train segmentation CNN for MRI & CT
+## train segmentation CNN for MRI & CT 
 ## One modality is treated as source, the other modality is treated as target. Order doesn't matter
 
 source_train_fid = "/data/multimodal_learning/data/mr_train_list"
