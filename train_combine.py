@@ -6,7 +6,7 @@ import logging
 import tensorflow as tf
 # import pymedimage.visualize as viz
 # import pymedimage.niftiio as nio
-from lib.util import _label_decomp, _eval_dice, _read_lists, _save_nii
+from util import _label_decomp, _eval_dice, _read_lists, _save_nii
 
 
 raw_size = [256, 256, 3] # original raw input size
@@ -244,7 +244,7 @@ class Trainer(object):
                 _save_nii(pred_y, gt_y, pair[1], self.output_path)
 
             print dice
-            
+
             dice_avg = np.mean(dice, axis=0).tolist()
             dice_std = np.std(dice, axis=0).tolist()
 
