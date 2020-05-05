@@ -14,7 +14,7 @@ import tensorflow as tf
 # import pymedimage.visualize as viz
 # import pymedimage.niftiio as nio
 from tensorflow.python import debug as tf_debug
-from lib.util import *
+from util import *
 
 np.random.seed(0)
 contour_map = { # a map used for mapping label value to its name, used for output
