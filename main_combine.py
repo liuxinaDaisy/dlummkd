@@ -84,7 +84,7 @@ def main(restored_model=None, test_model=None, phase='training'):
     if phase == 'training':
         trainer.train_segmenter(restored_model = restored_model)
 
-    if phase == 'testing' :
+    if phase == 'testing':
         # here are for the testing phase
         test_list_fid = "/data/projects/multimodal_learning/data/npz_mr_test_5cls"
         test_nii_list_fid = "/data/projects/multimodal_learning/data/test_mr_nii_list"
