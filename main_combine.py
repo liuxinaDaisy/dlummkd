@@ -17,11 +17,11 @@ currtime = datetime.datetime.now().strftime('%Y_%m_%d_%H_%M_%S')
 ## train segmentation CNN for MRI & CT 
 ## One modality is treated as source, the other modality is treated as target. Order doesn't matter
 
-source_train_fid = "/dlummkd/mr_train_list/"
-source_val_fid = "/dlummkd/mr_val_list/"
+source_train_fid = "/mr_train_list/"
+source_val_fid = "/mr_val_list/"
 
-target_train_fid = "/dlummkd/ct_train_list/"
-target_val_fid = "/dlummkd/ct_val_list/"
+target_train_fid = "/ct_train_list/"
+target_val_fid = "/ct_val_list/"
 
 cost_kwargs = {
     "miu_seg_dice": 1.0,
