@@ -5,7 +5,7 @@ import os
 import glob
 import logging
 import datetime
-from lib.util import _read_lists
+from util import _read_lists
 
 from network import Build_network as build_network
 from train_combine import Trainer
