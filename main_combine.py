@@ -86,15 +86,15 @@ def main(restored_model=None, test_model=None, phase='training'):
 
     if phase == 'testing':
         # here are for the testing phase
-        test_list_fid = "/data/projects/multimodal_learning/data/npz_mr_test_5cls"
-        test_nii_list_fid = "/data/projects/multimodal_learning/data/test_mr_nii_list"
+        test_list_fid = "/home/chenxi/dlummkd/test_mr_list"
+        test_nii_list_fid = "/home/chenxi/dlummkd/test_mr_nii_list"
         part = "source"
         logging.info('performance on source ...')
         source_dice = trainer.test(test_model = test_model, part = part, test_list_fid = test_list_fid, test_nii_list_fid = test_nii_list_fid)
 
 
-        test_list_fid = "/data/projects/multimodal_learning/data/npz_ct_test_5cls"
-        test_nii_list_fid = "/data/projects/multimodal_learning/data/test_ct_nii_list"
+        test_list_fid = "/home/chenxi/dlummkd/test_ct_list"
+        test_nii_list_fid = "/home/chenxi/dlummkd/test_ct_nii_list"
         part = "target"
         logging.info('performance on target ...')
         target_dice = trainer.test(test_model = test_model, part = part, test_list_fid = test_list_fid, test_nii_list_fid = test_nii_list_fid)
@@ -104,9 +104,9 @@ def main(restored_model=None, test_model=None, phase='training'):
 if __name__ == "__main__":
 
     # for training, can specify a restore checkpoint
-    restored_model = None
-    main(restored_model = restored_model, phase='training')
+    #restored_model = None
+    #main(restored_model = restored_model, phase='training')
 
     # # for testing, need to specify a model to be tested
-    # test_model = '/path/to/test_model.cpkt'
-    # source_dice, target_dice = main(test_model=test_model, phase='testing')
+    test_model = '/path/to/test_model.cpkt'
+    source_dice, target_dice = main(test_model=test_model, phase='testing')
