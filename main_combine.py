@@ -104,9 +104,9 @@ def main(restored_model=None, test_model=None, phase='training'):
 if __name__ == "__main__":
 
     # for training, can specify a restore checkpoint
-    #restored_model = None
-    #main(restored_model = restored_model, phase='training')
+    restored_model = None
+    main(restored_model = restored_model, phase='training')
 
     # # for testing, need to specify a model to be tested
-    test_model = '/path/to/test_model.cpkt'
-    source_dice, target_dice = main(test_model=test_model, phase='testing')
+    #test_model = '/path/to/test_model.cpkt'
+    #source_dice, target_dice = main(test_model=test_model, phase='testing')
