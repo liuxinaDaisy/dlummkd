@@ -171,7 +171,7 @@ class Trainer(object):
                         self.minibatch_stats_segmenter(sess, val_summary_writer, step, source_val_batch_x, source_val_batch_y, target_val_batch_x, target_val_batch_y, section="val")
 
 
-                    ## The followings are learning rate decay
+                    ## The followings are learning rate decay:
                     if self.global_step.eval() % 1000 == 0:
                         _pre_lr = sess.run(self.learning_rate_node)
                         sess.run(tf.assign(self.learning_rate_node, _pre_lr * 0.95))
