@@ -35,7 +35,7 @@ class_map = {  # a map used for mapping label value to its name, used for output
 class Trainer(object):
 
     def __init__(self, net, source_train_list, source_val_list, target_train_list, target_val_list, output_path, \
-                 opt_kwargs=None, num_epochs = 1000, training_iters = 200, checkpoint_space = 800, lr_update_flag = False):
+                 opt_kwargs=None, num_epochs = 1000, training_iters = 200, checkpoint_space = 200, lr_update_flag = False):
 
         self.net = net
         self.checkpoint_space = checkpoint_space # intervals between saving a checkpoint and decaying learning rate
@@ -178,7 +178,7 @@ class Trainer(object):
 
 
                     # save the model periodically
-                    if self.global_step.eval() % (self.checkpoint_space) == 0:
+                    if self.global_step.eval() % 1000 == 0:
                         saver = tf.train.Saver()
                         saved_model_name = self.opt_kwargs["prefix"] + "_itr%d_model.cpkt" % self.global_step.eval()
                         save_path = saver.save(sess, os.path.join(self.output_path, saved_model_name), global_step = self.global_step.eval())

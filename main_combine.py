@@ -73,7 +73,7 @@ def main(restored_model=None, test_model=None, phase='training'):
                       output_path = output_path, \
                       opt_kwargs = opt_kwargs,\
                       num_epochs = 750,\
-                      checkpoint_space = 1200)
+                      checkpoint_space = 300)
 
     # start tensorboard before getting started
     command2 = "fuser " + opt_kwargs["port"] + "/tcp -k"
