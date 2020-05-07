@@ -178,7 +178,7 @@ class Trainer(object):
 
 
                     # save the model periodically
-                    if self.global_step.eval() % 1000 == 0:
+                    if self.global_step.eval() % 20000 == 0:
                         saver = tf.train.Saver()
                         saved_model_name = self.opt_kwargs["prefix"] + "_itr%d_model.cpkt" % self.global_step.eval()
                         save_path = saver.save(sess, os.path.join(self.output_path, saved_model_name), global_step = self.global_step.eval())
