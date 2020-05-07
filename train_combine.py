@@ -35,7 +35,7 @@ class_map = {  # a map used for mapping label value to its name, used for output
 class Trainer(object):
 
     def __init__(self, net, source_train_list, source_val_list, target_train_list, target_val_list, output_path, \
-                 opt_kwargs=None, num_epochs = 1000, training_iters = 200, checkpoint_space = 500, lr_update_flag = False):
+                 opt_kwargs=None, num_epochs = 1000, training_iters = 200, checkpoint_space = 800, lr_update_flag = False):
 
         self.net = net
         self.checkpoint_space = checkpoint_space # intervals between saving a checkpoint and decaying learning rate
