@@ -61,7 +61,7 @@ def main(restored_model=None, test_model=None, phase='training'):
     target_train_list = _read_lists(target_train_fid)
     target_val_list = _read_lists(target_val_fid)
 
-    network = build_network(channels=3, n_class=5, batch_size=8, cost_kwargs=cost_kwargs, network_config=network_config, opt_kwargs=opt_kwargs)
+    network = build_network(channels=3, n_class=5, batch_size=1, cost_kwargs=cost_kwargs, network_config=network_config, opt_kwargs=opt_kwargs)
 
     logging.info("Network built")
 
